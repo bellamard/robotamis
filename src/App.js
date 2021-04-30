@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Card from './components/Card'
 import { useState, useEffect } from 'react';
@@ -24,7 +24,7 @@ function App() {
        if(Robot===""){
          return friendro
        }else if(friendro.name.toLowerCase().includes(Robot.toLowerCase())){
-          return friendro
+          return friendro;
        }
     }).map((friendro, key)=>{
       return(
