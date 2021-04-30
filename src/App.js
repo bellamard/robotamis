@@ -8,7 +8,6 @@ function App() {
   const [Robot, SetRobot] = useState('');
   const [Robotfriend, setRobotfriend] = useState([]);
   const [Load, setLoad]= useState(true);
-  //const fetch = require("node-fetch");
   const[erreur, setErreur]= useState(true)
   const handleChange = e => { SetRobot(e.target.value) };
   
