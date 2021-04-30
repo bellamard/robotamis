@@ -25,7 +25,7 @@ function App() {
        if(Robot===""){
           return friendro;
        }else if(friendro.name.toLowerCase().includes(Robot.toLowerCase())){   
-         return friendro;
+         return friendro
        }
        return null;
        
