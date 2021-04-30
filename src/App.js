@@ -8,6 +8,7 @@ function App() {
   const [Robotfriend, setRobotfriend] = useState([]);
   const [Load, setLoad]= useState(true);
   //const fetch = require("node-fetch");
+  const[erreur, setErreur]= useState(true)
   const handleChange = e => { SetRobot(e.target.value) };
   
 
@@ -16,7 +17,7 @@ function App() {
      fetch(url,{headers:{Accept:"application/json"}})
       .then(response => response.json())
       .then(data => { setRobotfriend(data); setLoad(false)})
-      .catch(err => console.log(`Erreur avec le message : ${err}`));
+      .catch(err => {console.log(`Erreur avec le message : ${err}`); setErreur(false)});
 
   }, []);
   const robotfiltre =()=>{
@@ -46,9 +47,11 @@ console.log(Load);
       <div className='bloccard'>
         
         { 
-          (Load===false)? robotfiltre():<div className='loading'>chargement...</div>
-          
-          
+          (Load===false)? robotfiltre():<div className='loading'>chargement...</div>          
+        }
+        {
+
+          (erreur!==false)?robotfiltre():<div className='loading'>une erreur a etait trouve</div>
         }
       </div>
       </div>
