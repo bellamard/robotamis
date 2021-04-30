@@ -36,7 +36,7 @@ function App() {
       );
     });
   }
-console.log(Load);
+
   return (
     < >
       <div className='App'>
@@ -46,12 +46,9 @@ console.log(Load);
         </form>
       <div className='bloccard'>
         
-        { 
-          (Load===false)? robotfiltre():<div className='loading'>chargement...</div>          
-        }
         {
-
-          (erreur!==false)?robotfiltre():<div className='loading'>une erreur a etait trouve</div>
+          (Load===false)? robotfiltre(): (erreur===false)?<div className='loading'>une erreur a etait trouve</div>:<div className='loading'>chargement</div>
+         
         }
       </div>
       </div>
