@@ -14,7 +14,7 @@ function App() {
   
 
   useEffect(() => {
-    const url = 'http://jsonplaceholder.typicode.com/users';
+    const url = 'https://jsonplaceholder.typicode.com/users';
      axios.get(url)
       .then(response => response.data)
       .then(data => { setRobotfriend(data); setLoad(false)})
