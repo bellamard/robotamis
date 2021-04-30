@@ -1,7 +1,7 @@
 import './App.css';
 import Card from './components/Card'
 import { useState, useEffect } from 'react';
-const fetch = require('node-fetch');
+
 
 function App() {
   const [Robot, SetRobot] = useState('');
