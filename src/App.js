@@ -23,12 +23,12 @@ function App() {
     return Robotfriend.filter((friendro)=>{
       
        if(Robot===""){
-         console.log(friendro);
-       }else if(friendro.name.toLowerCase().includes(Robot.toLowerCase())){
-          let element=friendro;
-          console.log(element);
+          return friendro;
+       }else if(friendro.name.toLowerCase().includes(Robot.toLowerCase())){   
+         return friendro;
        }
-       return friendro;
+       return null;
+       
     }).map((friendro, key)=>{
       return(
         <Card id={friendro.id}  nom={friendro.name} email={friendro.email} key={friendro.id}/>
