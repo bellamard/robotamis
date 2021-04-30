@@ -1,6 +1,7 @@
 import './App.css';
 import Card from './components/Card'
 import { useState, useEffect } from 'react';
+import axios from 'axios'
 
 
 function App() {
@@ -14,12 +15,13 @@ function App() {
 
   useEffect(() => {
     const url = 'http://jsonplaceholder.typicode.com/users';
-     fetch(url,{headers:{Accept:"application/json"}})
-      .then(response => response.json())
+     axios.get(url)
+      .then(response => response.data)
       .then(data => { setRobotfriend(data); setLoad(false)})
       .catch(err => {console.log(`Erreur avec le message : ${err}`); setErreur(false)});
 
   }, []);
+
   const robotfiltre =()=>{
     return Robotfriend.filter((friendro)=>{
       
