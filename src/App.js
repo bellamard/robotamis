@@ -15,17 +15,20 @@ function App() {
     const url = 'http://jsonplaceholder.typicode.com/users';
     fetch(url)
       .then(response => response.json())
-      .then(data => { return setRobotfriend(data), setLoad(false); });
+      .then(data => { setRobotfriend(data); setLoad(false)});
        
 
   }, []);
   const robotfiltre =()=>{
     return Robotfriend.filter((friendro)=>{
+      
        if(Robot===""){
-         return friendro
+         console.log(friendro);
        }else if(friendro.name.toLowerCase().includes(Robot.toLowerCase())){
-          return friendro;
+          let element=friendro;
+          console.log(element);
        }
+       return friendro;
     }).map((friendro, key)=>{
       return(
         <Card id={friendro.id}  nom={friendro.name} email={friendro.email} key={friendro.id}/>
