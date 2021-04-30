@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [Robot, SetRobot] = useState('');
   const [Robotfriend, setRobotfriend] = useState([]);
+  const [Load, setLoad]= useState(true);
 
   const handleChange = e => { SetRobot(e.target.value) };
   
@@ -14,13 +15,13 @@ function App() {
     const url = 'http://jsonplaceholder.typicode.com/users';
     fetch(url)
       .then(response => response.json())
-      .then(data => { setRobotfriend(data) });
+      .then(data => { return setRobotfriend(data), setLoad(false); });
        
 
   }, []);
   const robotfiltre =()=>{
     return Robotfriend.filter((friendro)=>{
-       if(Robot==""){
+       if(Robot===""){
          return friendro
        }else if(friendro.name.toLowerCase().includes(Robot.toLowerCase())){
           return friendro
@@ -31,7 +32,7 @@ function App() {
       );
     });
   }
-
+console.log(Load);
   return (
     < >
       <div className='App'>
@@ -41,8 +42,10 @@ function App() {
         </form>
       <div className='bloccard'>
         
-        {      
-          robotfiltre()
+        { 
+          (Load===false)? robotfiltre():<div className='loading'>chargement...</div>
+          
+          
         }
       </div>
       </div>
