@@ -7,16 +7,16 @@ function App() {
   const [Robot, SetRobot] = useState('');
   const [Robotfriend, setRobotfriend] = useState([]);
   const [Load, setLoad]= useState(true);
-
+  //const fetch = require("node-fetch");
   const handleChange = e => { SetRobot(e.target.value) };
   
 
   useEffect(() => {
     const url = 'http://jsonplaceholder.typicode.com/users';
-    fetch(url)
+     fetch(url,{headers:{Accept:"application/json"}})
       .then(response => response.json())
-      .then(data => { setRobotfriend(data); setLoad(false)});
-       
+      .then(data => { setRobotfriend(data); setLoad(false)})
+      .catch(err => console.log(`Erreur avec le message : ${err}`));
 
   }, []);
   const robotfiltre =()=>{
