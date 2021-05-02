@@ -84,15 +84,43 @@ body {
 }
 .card:hover {
     background-color: blue;
+    width: 320px;
+    height: 420px;
     color: white;
 }
 .card h3 {
     color: blue;
     font-size: 5rem;
+    text-decoration: none;
+    list-style: none;
 }
-.card:hover h3 {
+.card:hover h3{
     color: yellow;
 
+}
+.details{
+    border-radius: 10%;
+    width: 600px;
+    height: 400px;
+    background-color: greenyellow;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    font-size: 5rem;
+
+}
+.details h3 {
+    color: blue;
+    font-size: 5rem;
+    text-decoration: none;
+    list-style: none;
+}
+.details span {
+    font-size: 2.6rem;
+    text-decoration: none;
+    list-style: none;
 }
 .bloccard {
 
@@ -100,6 +128,27 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+.home {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.lien{
+    font-size: 2.4rem;
+    text-decoration: none;
+    list-style: none;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 10%;
+}
+.lien:hover{
+    background-color:aqua;
+    color: blue;
 }
 
 
