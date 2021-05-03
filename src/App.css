@@ -84,8 +84,8 @@ body {
 }
 .card:hover {
     background-color: blue;
-    width: 320px;
-    height: 420px;
+    width: 310px;
+    height: 410px;
     color: white;
 }
 .card h3 {
